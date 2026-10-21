@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f8">
+  <title>Admin Studio | Our Little World</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="common.css">
+  <script src="admin.js" defer></script>
+  <script src="common.js" defer></script>
+</head>
+<body>
+    
+<section id="adminLogin" class="admin-login-gate" hidden>
+  <form id="adminLoginForm" class="editor-form admin-login-card">
+    <div class="brand-heart">♡</div>
+    <span class="eyebrow">OUR LITTLE WORLD</span>
+    <h1>Admin Studio</h1>
+    <p>Sign in to manage your website.</p>
+
+    <label for="adminUsername">Username</label>
+    <input id="adminUsername" autocomplete="username" required>
+
+    <label for="adminPassword">Password</label>
+    <input
+      id="adminPassword"
+      type="password"
+      autocomplete="current-password"
+      required
+    >
+
+    <button class="primary-button" type="submit">Sign in ♡</button>
+    <p id="loginError" role="alert"></p>
+  </form>
+</section>
+
+<div class="admin-shell" id="adminShell" hidden>
+        <aside class="sidebar">
+      <a class="admin-brand" href="home.html">
+        <span class="brand-heart">♡</span>
+        <span>Our Little World<small>ADMIN STUDIO</small></span>
+      </a>
+
+      <p class="sidebar-label">WORKSPACE</p>
+
+      <nav class="side-nav" aria-label="Admin sections">
+        <button class="nav-item active" data-section="overview">✦ Overview</button>
+        <button class="nav-item" data-section="gallery">▧ Gallery</button>
+        <button class="nav-item" data-section="memories">◷ Memories</button>
+        <button class="nav-item" data-section="playlist">♫ Playlist</button>
+        <button class="nav-item" data-section="letter">♡ Birthday Letter</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="demo-status">
+          <span class="status-dot"></span>
+          <span>MySQL connected</span>
+        </div>
+        <a href="home.html" class="visit-link">↗ Visit website</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        
+<button id="adminLogout" class="delete-button" type="button">
+  Log out
+</button>
+
+        <div>
+          <span class="eyebrow">YOUR CREATIVE CORNER</span>
+          <h1 id="pageTitle">Overview</h1>
+        </div>
+        <div class="admin-avatar" aria-label="Admin">♡</div>
+      </header>
+
+      <section class="welcome-card">
+        <div>
+          <span class="welcome-tag">A LITTLE SPACE, MADE WITH CARE</span>
+          <h2>Welcome to your studio <span>♡</span></h2>
+          <p>Manage the public memories, music and little details of your website.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">✿</div>
+      </section>
+
+      <section class="stats-grid" id="overviewStats">
+        <article class="stat-card">
+          <span class="stat-icon pink">▧</span>
+          <p>Gallery items</p>
+          <strong id="galleryCount">0</strong>
+          <small>In this demo session</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon purple">◷</span>
+          <p>Memories</p>
+          <strong id="memoryCount">0</strong>
+          <small>In this demo session</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon peach">♫</span>
+          <p>Playlist links</p>
+          <strong id="trackCount">0</strong>
+          <small>In this demo session</small>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CONTENT MANAGER</span>
+            <h2 id="sectionHeading">Your website content</h2>
+          </div>
+          <span class="demo-pill">DEMO MODE</span>
+        </div>
+
+        <div class="content-section active" id="overviewSection">
+          <div class="overview-grid">
+            <button class="quick-card" data-open="gallery">
+              <span>📸</span>
+              <strong>Manage gallery</strong>
+              <small>Add image links and captions</small>
+              <span class="quick-arrow">↗</span>
+            </button>
+            <button class="quick-card" data-open="memories">
+              <span>🕰️</span>
+              <strong>Add a memory</strong>
+              <small>Keep a public timeline</small>
+              <span class="quick-arrow">↗</span>
+            </button>
+            <button class="quick-card" data-open="playlist">
+              <span>🎧</span>
+              <strong>Update playlist</strong>
+              <small>Add Spotify track links</small>
+              <span class="quick-arrow">↗</span>
+            </button>
+            <button class="quick-card" data-open="letter">
+              <span>💌</span>
+              <strong>Edit the letter</strong>
+              <small>Update the birthday message</small>
+              <span class="quick-arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="privacy-card">
+            <span class="privacy-icon">🔒</span>
+            <div>
+              <h3>Privacy comes first</h3>
+              <p>This studio manages website content only. Private journal entries and private conversations aren't available here.</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Before going live</h3>
+            <p>This is a visual prototype. Changes currently exist only in this browser tab and aren't uploaded to the live website. A real admin login and database will be added later.</p>
+          </div>
+        </div>
+
+        <div class="content-section" id="gallerySection">
+          <div class="section-description">
+            Add a publicly displayed image using its image URL. Private files and phone-local paths won't work as public links.
+          </div>
+
+          <form class="editor-form" id="galleryForm">
+            <label for="photoTitle">Photo caption</label>
+            <input id="photoTitle" maxlength="100" placeholder="A little moment..." required>
+
+            
+<label for="photoFile">Choose a photo</label>
+<input
+  id="photoFile"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<div id="photoPreviewWrap" class="photo-preview-wrap" hidden>
+  <img id="photoPreview" alt="Selected photo preview">
+  <button id="clearPhoto" type="button" class="delete-button">
+    Remove photo
+  </button>
+</div>
+
+<p class="section-description">
+  JPG, PNG or WebP · Maximum 5 MB
+</p>
+
+            <label for="photoCategory">Category</label>
+            <select id="photoCategory">
+              <option value="Moments">Moments</option>
+              <option value="Suhana">Suhana</option>
+              <option value="Little things">Little things</option>
+            </select>
+
+            <button class="primary-button" type="submit">＋ Add gallery item</button>
+          </form>
+
+<form class="editor-form" id="galleryUrlForm">
+  <h3>Add photo using a link</h3>
+  <p class="section-description">
+    Paste a public image URL instead of uploading a file.
+  </p>
+
+  <label for="photoUrlTitle">Photo caption</label>
+  <input
+    id="photoUrlTitle"
+    maxlength="100"
+    placeholder="A little moment..."
+    required
+  >
+
+  <label for="photoUrl">Public image URL</label>
+  <input
+    id="photoUrl"
+    type="url"
+    placeholder="https://example.com/photo.jpg"
+    required
+  >
+
+  <label for="photoUrlCategory">Category</label>
+  <select id="photoUrlCategory">
+    <option value="Moments">Moments</option>
+    <option value="Suhana">Suhana</option>
+    <option value="Little things">Little things</option>
+  </select>
+
+  <button class="primary-button" type="submit">
+    ＋ Add image link
+  </button>
+</form>
+
+          <div class="item-list" id="galleryList"></div>
+        </div>
+
+        <div class="content-section" id="memoriesSection">
+          <form class="editor-form" id="memoryForm">
+            <label for="memoryTitle">Memory title</label>
+            <input id="memoryTitle" maxlength="100" placeholder="A day to remember..." required>
+
+            <label for="memoryDate">Date</label>
+            <input id="memoryDate" type="date" required>
+
+            <label for="memoryDescription">Description</label>
+            <textarea id="memoryDescription" rows="4" maxlength="1000" placeholder="Write a little about this memory..." required></textarea>
+
+            <button class="primary-button" type="submit">＋ Add memory</button>
+          </form>
+
+          <div class="item-list" id="memoryList"></div>
+        </div>
+
+        <div class="content-section" id="playlistSection">
+          <div class="section-description">
+            Paste an official Spotify track or playlist link. This prototype lists the link; fetching artwork and track details automatically requires backend integration.
+          </div>
+
+          
+<form class="editor-form" id="trackForm">
+  <label for="trackMood">Choose mood</label>
+  <select id="trackMood" required>
+    <option value="miss">🌙 When you'll miss me</option>
+    <option value="happy">☀️ When you're happy</option>
+  </select>
+
+  <label for="trackUrl">Spotify URL</label>
+  <input
+    id="trackUrl"
+    type="url"
+    placeholder="https://open.spotify.com/track/..."
+    required
+  >
+
+  <button class="primary-button" type="submit">
+    ＋ Add Spotify link
+  </button>
+</form>
+
+
+          <div class="item-list" id="trackList"></div>
+        </div>
+
+        <div class="content-section" id="letterSection">
+          <form class="editor-form" id="letterForm">
+            <label for="letterTitle">Letter heading</label>
+            <input id="letterTitle" maxlength="120" placeholder="A letter for you..." required>
+
+            <label for="letterContent">Letter content</label>
+            <textarea id="letterContent" rows="10" maxlength="10000" placeholder="Write your letter here..." required></textarea>
+
+            <button class="primary-button" type="submit">Save letter preview</button>
+          </form>
+          <p class="section-description">This only updates the local preview state. Publishing the letter will be connected to the database later.</p>
+        </div>
+      </section>
+
+      <footer class="admin-footer">
+        Made with care ♡ <span>•</span> Free-tier-friendly project
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

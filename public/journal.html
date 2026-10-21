@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Journal ♡</title>
+  <link rel="stylesheet" href="journal.css">
+  <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+</head>
+<body>
+  <main class="journal-shell">
+    <header class="journal-header">
+      <a class="back-link" href="home.html">← Back home</a>
+      <span class="eyebrow">A LITTLE SPACE FOR US</span>
+      <h1>Private Journal <span>♡</span></h1>
+      <p class="subtitle">Little thoughts, memories, and things worth keeping.</p>
+    </header>
+
+    <section id="loginPanel" class="panel">
+      <div class="lock-icon">♡</div>
+      <h2>Just between us</h2>
+      <p>Enter the journal password to continue.</p>
+      <form id="loginForm">
+        <label for="journalPassword">Journal password</label>
+        <input id="journalPassword" type="password" required
+          minlength="1" maxlength="72" autocomplete="current-password">
+        <button type="submit">Unlock journal</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="journalPanel" hidden>
+      <div class="panel">
+        <h2 id="formHeading">Write a memory</h2>
+        <form id="entryForm">
+          <label for="entryTitle">Title</label>
+          <input id="entryTitle" maxlength="150" required>
+
+          <label for="entryDate">Date</label>
+          <input id="entryDate" type="date" required>
+
+          <label for="entryContent">Your thoughts</label>
+          <textarea id="entryContent" rows="7" maxlength="20000" required></textarea>
+
+          <div class="form-actions">
+            <button id="saveButton" type="submit">Save memory</button>
+            <button id="cancelEdit" type="button" class="secondary" hidden>Cancel edit</button>
+          </div>
+          <p id="entryMessage" class="message" role="status"></p>
+        </form>
+      </div>
+
+      <div class="entries-heading">
+        <h2>Our little memories</h2>
+        <button id="lockButton" type="button" class="secondary">Lock journal</button>
+      </div>
+      <div id="entriesList" class="entries-list"></div>
+    </section>
+  </main>
+  <script src="journal.js"></script>
+</body>
+</html>

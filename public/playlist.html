@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8e9e7">
+  <title>Songs for Your Little Moods ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="playlist.css">
+  <script src="playlist.js" defer></script>
+  <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="wordmark" href="index.html">
+      <span class="wordmark-heart">♡</span> our little world
+    </a>
+    <a class="back-link" href="index.html">← Back home</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span>
+        A LITTLE MUSIC CORNER
+        <span class="eyebrow-line"></span>
+      </div>
+
+      <h1>Songs for your<br><em>little moods.</em></h1>
+
+      <p class="hero-copy">
+        For the days you miss someone, the days you feel on top
+        of the world, and every feeling in between.
+      </p>
+
+      <div class="hero-note">
+        <span>♡</span> Pick a feeling. I'll meet you there.
+      </div>
+
+      <div class="hero-sparkle sparkle-a">✳</div>
+      <div class="hero-sparkle sparkle-b">✦</div>
+    </section>
+
+    <section class="mood-section">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow small-eyebrow">WHAT'S YOUR MOOD TODAY?</p>
+          <h2>Choose your little world</h2>
+        </div>
+        <p class="section-aside">No right mood. Just press play. ♡</p>
+      </div>
+
+      <div class="mood-grid">
+
+        <!-- MOOD 1: WHEN YOU MISS ME -->
+        <button
+          class="mood-card miss-card selected"
+          type="button"
+          data-mood="miss"
+          aria-pressed="true"
+        >
+          <span class="mood-number">01 / FEELING</span>
+
+          <span class="mood-art miss-art">
+            <span class="moon"></span>
+            <span class="tiny-star star-one">✦</span>
+            <span class="tiny-star star-two">✧</span>
+            <span class="art-caption">somewhere<br>between us</span>
+          </span>
+
+          <span class="mood-card-bottom">
+            <span>
+              <strong>When you'll miss me</strong>
+              <small>For the quiet, achey moments.</small>
+            </span>
+            <span class="round-arrow">↗</span>
+          </span>
+        </button>
+
+        <!-- MOOD 2: WHEN YOU'RE HAPPY -->
+        <button
+          class="mood-card happy-card"
+          type="button"
+          data-mood="happy"
+          aria-pressed="false"
+        >
+          <span class="mood-number">02 / FEELING</span>
+
+          <span class="mood-art happy-art">
+            <span class="sun"></span>
+            <span class="sun-ray ray-one"></span>
+            <span class="sun-ray ray-two"></span>
+            <span class="sun-ray ray-three"></span>
+            <span class="art-hill hill-one"></span>
+            <span class="art-hill hill-two"></span>
+            <span class="art-caption">let the little<br>things glow</span>
+          </span>
+
+          <span class="mood-card-bottom">
+            <span>
+              <strong>When you're happy</strong>
+              <small>For the sunshine in you.</small>
+            </span>
+            <span class="round-arrow">↗</span>
+          </span>
+        </button>
+
+        <!-- MOOD 3: YOUR YOUTUBE MUSIC PLAYLIST -->
+        <a
+          class="mood-card youtube-card"
+          href="https://music.youtube.com/playlist?list=PLHEPCOervUkk&amp;si=sf_Q-nhZ62Ai9Sr9"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open my YouTube Music playlist"
+        >
+          <span class="mood-number">03 / YOUR MUSIC</span>
+
+          <span class="mood-art youtube-art">
+            <span class="yt-disc">
+              <span class="yt-play"></span>
+            </span>
+            <span class="yt-orbit orbit-one"></span>
+            <span class="yt-orbit orbit-two"></span>
+            <span class="art-caption">the songs<br>I keep close</span>
+          </span>
+
+          <span class="mood-card-bottom">
+            <span>
+              <strong>My YouTube Music</strong>
+              <small>My playlist, just a tap away.</small>
+            </span>
+            <span class="round-arrow">↗</span>
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- MOOD-BASED SONGS -->
+    <section class="playlist-section" id="playlistSection">
+      <div class="playlist-heading">
+        <div class="playlist-heading-copy">
+          <p class="eyebrow small-eyebrow" id="playlistKicker">
+            YOUR SOFTER SIDE
+          </p>
+
+          <h2 id="playlistTitle">When you'll miss me <span>♡</span></h2>
+
+          <p id="playlistDescription">
+            Some songs say the things we don't always know how to.
+          </p>
+        </div>
+
+        <div class="playlist-count">
+          <span class="count-dot"></span>
+          <span id="songCount">0 songs</span>
+        </div>
+      </div>
+
+      <div class="player-layout">
+
+        <!-- SONG LIST -->
+        <div class="song-panel">
+          <div class="song-panel-top">
+            <span>YOUR SONGS</span>
+            <span class="tiny-heart">♡</span>
+          </div>
+
+          <div id="songList" class="song-list">
+            <div class="empty-playlist">
+              <span class="empty-icon">♫</span>
+              <strong>Your songs will live here.</strong>
+              <p>
+                Once songs are added from Admin Studio,
+                they'll appear here in your chosen order.
+              </p>
+            </div>
+          </div>
+
+          <p class="playlist-footnote">
+            A little collection, made with care. <span>♡</span>
+          </p>
+        </div>
+
+        <!-- SPOTIFY PLAYER -->
+        <aside class="player-panel">
+          <div class="player-panel-top">
+            <span>NOW PLAYING</span>
+            <span class="equalizer">
+              <i></i><i></i><i></i><i></i>
+            </span>
+          </div>
+
+         
+<div class="player-art" id="playerArt" aria-label="Selected song cover">
+  <img
+    id="playerArtImage"
+    class="player-art-image"
+    src=""
+    alt="Selected song cover"
+    hidden
+  >
+</div>
+
+
+          <p class="player-label">SELECTED WITH LOVE</p>
+          <h3 id="nowPlayingTitle">Choose a song</h3>
+          <p id="nowPlayingArtist">Your little soundtrack awaits.</p>
+
+          <div class="spotify-frame-wrap" id="spotifyFrameWrap">
+            <div class="player-placeholder">
+              <span>♫</span>
+              <p>
+                Choose a song from the list to open its Spotify player here.
+              </p>
+            </div>
+          </div>
+
+          <p class="spotify-note">
+            Spotify playback depends on song availability and your device/account.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="footer-heart">♡</div>
+      <p>Wherever you are, I hope a song finds you.</p>
+      <span>made with a little bit of love</span>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6edff">
+    <title>Your Little Space ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="space.css">
+    
+<link rel="stylesheet" href="common.css">
+<script src="common.js" defer></script>
+
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="brand" href="home.html">little <span>♡</span> world</a>
+        <a class="back-link" href="home.html">← Back home</a>
+    </header>
+
+    <main class="space-page">
+
+        <section class="intro">
+            <div class="intro-icon">🦋</div>
+            <p class="eyebrow">A CORNER THAT BELONGS TO YOU</p>
+            <h1>Your Little <span>Space</span></h1>
+            <p>No perfect words needed. Just be yourself here.</p>
+        </section>
+
+        <section class="gentle-banner">
+            <span class="banner-sparkle">✧</span>
+            <div>
+                <h2>Take a breath, Suhana.</h2>
+                <p>You don't have to figure everything out today.</p>
+            </div>
+            <span class="banner-heart">♡</span>
+        </section>
+
+        <section class="writing-layout">
+
+            <div class="write-card">
+                <div class="card-heading">
+                    <span class="heading-icon">✍️</span>
+                    <div>
+                        <h2>A thought on your mind?</h2>
+                        <p>Write whatever feels right.</p>
+                    </div>
+                </div>
+
+                <form id="noteForm">
+                    <label for="noteTitle">Give your note a title</label>
+                    <input
+                        id="noteTitle"
+                        name="noteTitle"
+                        type="text"
+                        maxlength="80"
+                        placeholder="A little thought..."
+                        required
+                    >
+
+                    <label for="noteMood">How are you feeling?</label>
+                    <select id="noteMood" name="noteMood">
+                        <option value="🌷 Gentle">🌷 Gentle</option>
+                        <option value="☀️ Happy">☀️ Happy</option>
+                        <option value="☁️ Thoughtful">☁️ Thoughtful</option>
+                        <option value="🌧️ A little low">🌧️ A little low</option>
+                        <option value="🌙 Quiet">🌙 Quiet</option>
+                        <option value="🦋 Hopeful">🦋 Hopeful</option>
+                    </select>
+
+                    <label for="noteText">Your words</label>
+                    <textarea
+                        id="noteText"
+                        name="noteText"
+                        rows="7"
+                        maxlength="5000"
+                        placeholder="This is your space. Start anywhere..."
+                        required
+                    ></textarea>
+
+                    <div class="form-bottom">
+                        <span id="characterCount">0 / 5000</span>
+                        <button class="save-button" type="submit">
+                            Save this note ♡
+                        </button>
+                    </div>
+
+                    <p class="privacy-hint">
+                        🔒 Private notes should only be visible to their author.
+                        This demo doesn't securely save notes yet.
+                    </p>
+                </form>
+
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </div>
+
+            <aside class="side-column">
+                <div class="prompt-card">
+                    <span class="prompt-icon">🌙</span>
+                    <p class="eyebrow">A LITTLE PROMPT</p>
+                    <h3>Something to think about</h3>
+                    <p id="promptText">
+                        What's one little thing that made you smile recently?
+                    </p>
+                    <button id="newPromptButton" type="button">
+                        Another prompt ↗
+                    </button>
+                </div>
+
+                <div class="affirmation-card">
+                    <span>✿</span>
+                    <p class="eyebrow">A GENTLE REMINDER</p>
+                    <h3>You are allowed to take your time.</h3>
+                    <p>Rest is not falling behind. Feelings don't need deadlines.</p>
+                </div>
+            </aside>
+
+        </section>
+
+        <section class="notes-section">
+            <div class="notes-heading">
+                <div>
+                    <p class="eyebrow">YOUR LITTLE COLLECTION</p>
+                    <h2>Notes from the heart</h2>
+                </div>
+                <span class="notes-count" id="notesCount">0 NOTES</span>
+            </div>
+
+            <div class="notes-grid" id="notesGrid">
+                <div class="empty-state" id="emptyState">
+                    <span>💌</span>
+                    <h3>Your page is waiting.</h3>
+                    <p>Notes you create in this demo will appear here.</p>
+                </div>
+            </div>
+
+            <button id="clearNotesButton" class="clear-button" type="button" hidden>
+                Clear demo notes
+            </button>
+        </section>
+
+        <footer class="page-footer">
+            <a href="playlist.html">← Our Playlist</a>
+            <span>your thoughts, your pace · ♡</span>
+            <a href="chat.html">Little Messages →</a>
+        </footer>
+
+    </main>
+
+    <script src="space.js"></script>
+</body>
+</html>

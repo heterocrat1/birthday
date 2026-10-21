@@ -1,0 +1,340 @@
+
+:root {
+    --ink: #594459;
+    --muted: #927b91;
+    --rose: #d879a1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 10% 15%, #ffd8e5 0, transparent 35%),
+        radial-gradient(ellipse at 90% 55%, #e6d8ff 0, transparent 35%),
+        linear-gradient(135deg, #fff8f1, #fff0f6 55%, #f6f0ff);
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8d5e2;
+}
+
+.brand {
+    font-family: "Dancing Script", cursive;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.brand span {
+    color: var(--rose);
+}
+
+.back-link {
+    color: #94748d;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--rose);
+}
+
+.letter-page {
+    position: relative;
+    width: min(900px, 90%);
+    margin: auto;
+    padding: 48px 0 30px;
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #b97898;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.intro h1 {
+    margin: 12px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 70px);
+    font-weight: 500;
+}
+
+.intro h1 span {
+    color: var(--rose);
+    font-family: "Dancing Script", cursive;
+}
+
+.intro-text {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.page-decoration {
+    position: absolute;
+    pointer-events: none;
+    animation: float 5s ease-in-out infinite;
+}
+
+.decoration-one {
+    top: 125px;
+    left: 2%;
+    color: #dba2bd;
+    font-size: 35px;
+}
+
+.decoration-two {
+    top: 330px;
+    right: 1%;
+    color: #d98bad;
+    font-size: 40px;
+    animation-delay: 1s;
+}
+
+.decoration-three {
+    top: 550px;
+    left: 1%;
+    color: #b5a0d9;
+    font-size: 35px;
+    animation-delay: 2s;
+}
+
+.letter-paper {
+    position: relative;
+    width: min(680px, 100%);
+    margin: 0 auto;
+    padding: 38px clamp(22px, 7vw, 65px) 30px;
+    border: 1px solid #f0dce1;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 35px,
+            #d8b8c52b 36px
+        ),
+        #fffdf8;
+    box-shadow: 0 20px 60px #9d6f8d20, 0 3px 8px #9d6f8d0b;
+    transform: rotate(-0.4deg);
+    animation: paper-appear 0.8s ease both;
+}
+
+.tape {
+    position: absolute;
+    top: -12px;
+    width: 88px;
+    height: 25px;
+    background: #f5c8d5bb;
+    box-shadow: 0 2px 5px #8b56751a;
+}
+
+.tape-left {
+    left: 35px;
+    transform: rotate(-8deg);
+}
+
+.tape-right {
+    right: 35px;
+    background: #dfd0f4bb;
+    transform: rotate(7deg);
+}
+
+.letter-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 28px;
+    color: #bd86a1;
+    font-family: "Dancing Script", cursive;
+    font-size: 19px;
+}
+
+.letter-top span:first-child,
+.letter-top span:last-child {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.letter-content {
+    color: #6d586b;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.letter-content .dear {
+    color: #bd6f97;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+}
+
+.letter-content .signoff {
+    margin-top: 27px;
+}
+
+.letter-content .signature {
+    margin: 5px 0 25px;
+    color: #c16f99;
+    font-family: "Dancing Script", cursive;
+    font-size: 28px;
+    text-align: right;
+}
+
+.letter-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 18px;
+    border-top: 1px dashed #e4cbd8;
+    color: #a58a9d;
+    font-family: "Dancing Script", cursive;
+    font-size: 16px;
+}
+
+.letter-actions {
+    min-height: 90px;
+    padding-top: 26px;
+    text-align: center;
+}
+
+.read-button {
+    padding: 13px 25px;
+    border: 1px solid #e9bdd1;
+    border-radius: 50px;
+    background: linear-gradient(120deg, #f9d0df, #f9dfd1);
+    box-shadow: 0 6px 20px #dca8c626;
+    color: #79546f;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.read-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #dca8c640;
+}
+
+.read-message {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #a67a98;
+    font-family: "Dancing Script", cursive;
+    font-size: 19px;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 22px 0;
+    border-top: 1px solid #e8d5e2;
+    color: #987e94;
+    font-size: 11px;
+}
+
+.page-footer a {
+    transition: color 0.2s;
+}
+
+.page-footer a:hover {
+    color: var(--rose);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes paper-appear {
+    from { opacity: 0; transform: translateY(18px) rotate(-0.4deg); }
+    to { opacity: 1; transform: translateY(0) rotate(-0.4deg); }
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 19px 0;
+    }
+
+    .brand {
+        font-size: 26px;
+    }
+
+    .letter-page {
+        padding-top: 38px;
+    }
+
+    .intro {
+        margin-bottom: 38px;
+    }
+
+    .letter-paper {
+        padding: 32px 22px 25px;
+    }
+
+    .tape {
+        width: 65px;
+    }
+
+    .tape-left {
+        left: 18px;
+    }
+
+    .tape-right {
+        right: 18px;
+    }
+
+    .letter-content {
+        font-size: 17px;
+        line-height: 1.85;
+    }
+
+    .page-decoration {
+        opacity: 0.5;
+    }
+
+    .page-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

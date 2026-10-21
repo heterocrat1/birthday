@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0f5">
+    <title>The Gallery ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="gallery.css">
+    
+<link rel="stylesheet" href="common.css">
+<script src="common.js" defer></script>
+
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="home.html">little <span>♡</span> world</a>
+        <a class="back-link" href="home.html">← Back home</a>
+    </header>
+
+    <main class="gallery-page">
+        <section class="intro">
+            <p class="eyebrow">A SCRAPBOOK OF LITTLE MOMENTS</p>
+            <h1>The <span>Gallery</span></h1>
+            <p>Little frames, favourite faces, and moments worth keeping. 🌷</p>
+        </section>
+
+        <section class="gallery-toolbar">
+            <div>
+                <p class="toolbar-title">Collected little things</p>
+                <p class="toolbar-subtitle">Tap a picture to see it up close.</p>
+            </div>
+
+            <div class="gallery-filters" aria-label="Filter gallery">
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="moments">Moments</button>
+                <button class="filter-button" data-filter="suhana">Suhana</button>
+                <button class="filter-button" data-filter="little">Little things</button>
+            </div>
+        </section>
+
+        <section class="gallery-grid" id="galleryGrid" aria-label="Photo gallery">
+
+            <button class="gallery-item item-tall tone-rose"
+                data-category="moments"
+                data-caption="A moment worth remembering ♡"
+                data-image=""
+                aria-label="Open memory photo 1">
+                <span class="photo-placeholder"><span>🌸</span><small>Your photo goes here</small></span>
+                <span class="item-caption">a moment worth remembering</span>
+                <span class="item-number">01</span>
+            </button>
+
+            <button class="gallery-item tone-peach"
+                data-category="suhana"
+                data-caption="Just being you ✿"
+                data-image=""
+                aria-label="Open memory photo 2">
+                <span class="photo-placeholder"><span>🦋</span><small>Add a favourite picture</small></span>
+                <span class="item-caption">just being you</span>
+                <span class="item-number">02</span>
+            </button>
+
+            <button class="gallery-item tone-lilac"
+                data-category="little"
+                data-caption="The little details ✧"
+                data-image=""
+                aria-label="Open memory photo 3">
+                <span class="photo-placeholder"><span>☁️</span><small>A little detail</small></span>
+                <span class="item-caption">the little details</span>
+                <span class="item-number">03</span>
+            </button>
+
+            <button class="gallery-item tone-mint"
+                data-category="moments"
+                data-caption="A happy little memory ♡"
+                data-image=""
+                aria-label="Open memory photo 4">
+                <span class="photo-placeholder"><span>🌿</span><small>One more memory</small></span>
+                <span class="item-caption">a happy little memory</span>
+                <span class="item-number">04</span>
+            </button>
+
+            <button class="gallery-item item-tall tone-blue"
+                data-category="suhana"
+                data-caption="A picture to keep close 💌"
+                data-image=""
+                aria-label="Open memory photo 5">
+                <span class="photo-placeholder"><span>💌</span><small>Your favourite photo</small></span>
+                <span class="item-caption">a picture to keep close</span>
+                <span class="item-number">05</span>
+            </button>
+
+            <button class="gallery-item tone-yellow"
+                data-category="little"
+                data-caption="Tiny things, big feelings ✨"
+                data-image=""
+                aria-label="Open memory photo 6">
+                <span class="photo-placeholder"><span>✨</span><small>Something meaningful</small></span>
+                <span class="item-caption">tiny things, big feelings</span>
+                <span class="item-number">06</span>
+            </button>
+
+        </section>
+
+        <p class="gallery-note">
+            <span>✦</span>
+            The best collections are made one little moment at a time.
+            <span>♡</span>
+        </p>
+
+        <footer class="page-footer">
+            <a href="memories.html">← Memory Lane</a>
+            <span>framed with care · ♡</span>
+            <a href="playlist.html">Our Playlist →</a>
+        </footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog"
+        aria-modal="true" aria-label="Photo preview" hidden>
+        <button class="lightbox-close" id="closeLightbox"
+            aria-label="Close photo preview">×</button>
+
+        <button class="lightbox-arrow previous" id="previousPhoto"
+            aria-label="Previous photo">‹</button>
+
+        <div class="lightbox-content">
+            <div class="lightbox-image-wrap" id="lightboxImageWrap">
+                <span class="lightbox-placeholder">♡</span>
+            </div>
+            <p id="lightboxCaption">A little memory ♡</p>
+            <span id="lightboxCounter"></span>
+        </div>
+
+        <button class="lightbox-arrow next" id="nextPhoto"
+            aria-label="Next photo">›</button>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
